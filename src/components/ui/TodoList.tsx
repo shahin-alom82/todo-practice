@@ -26,8 +26,8 @@ const TodoList = () => {
                         )}
                         <div className="px-9 py-4">
                               {
-                                    todo.map((item) => (
-                                          <h1 className="flex p-3 px-4 mb-4 items-center mt-4 justify-between border  hover:border hover:border-green-700 duration-300 focus-visible:border-green-700 border-l-8 border-l-green-700 hover:border-l-8 hover:border-l-green-700 border-green-700">{item.todo}
+                                    todo.map((item, index) => (
+                                          <h1 key={index} className="flex p-3 px-4 mb-4 items-center mt-4 justify-between border  hover:border hover:border-green-700 duration-300 focus-visible:border-green-700 border-l-8 border-l-green-700 hover:border-l-8 hover:border-l-green-700 border-green-700">{item.todo}
                                                 <AiFillDelete size={20} className="text-gray-400 hover:text-red-600 cursor-pointer duration-300" onClick={() => dispatch(deleteTodo(item._id), toast.success("Todo deleted successfully!"))} />
                                           </h1>
                                     ))
